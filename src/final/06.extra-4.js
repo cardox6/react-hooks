@@ -10,20 +10,22 @@ import {
   PokemonDataView,
 } from '../pokemon'
 
-class ErrorBoundary extends React.Component {
-  state = {error: null}
-  static getDerivedStateFromError(error) {
-    return {error}
-  }
-  render() {
-    const {error} = this.state
-    if (error) {
-      return <this.props.FallbackComponent error={error} />
-    }
+import {ErrorBoundary} from 'react-error-boundary'
 
-    return this.props.children
-  }
-}
+// class ErrorBoundary extends React.Component {
+//   state = {error: null}
+//   static getDerivedStateFromError(error) {
+//     return {error}
+//   }
+//   render() {
+//     const {error} = this.state
+//     if (error) {
+//       return <this.props.FallbackComponent error={error} />
+//     }
+
+//     return this.props.children
+//   }
+// }
 
 function PokemonInfo({pokemonName}) {
   const [state, setState] = React.useState({
